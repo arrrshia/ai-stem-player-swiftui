@@ -14,6 +14,9 @@
 		69E91F252E7F075F00353A3E /* stemplayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F242E7F075F00353A3E /* stemplayerTests.swift */; };
 		69E91F2F2E7F075F00353A3E /* stemplayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F2E2E7F075F00353A3E /* stemplayerUITests.swift */; };
 		69E91F312E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F302E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift */; };
+		69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F3D2E7F077800353A3E /* StemEngine.swift */; };
+		69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F442E7F0D9900353A3E /* LibraryStore.swift */; };
+		69E91F472E7F146200353A3E /* StemFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F462E7F146200353A3E /* StemFolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		69E91F2A2E7F075F00353A3E /* stemplayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stemplayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E91F2E2E7F075F00353A3E /* stemplayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerUITests.swift; sourceTree = "<group>"; };
 		69E91F302E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69E91F3D2E7F077800353A3E /* StemEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemEngine.swift; sourceTree = "<group>"; };
+		69E91F442E7F0D9900353A3E /* LibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStore.swift; sourceTree = "<group>"; };
+		69E91F462E7F146200353A3E /* StemFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemFolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				69E91F152E7F075E00353A3E /* ContentView.swift */,
 				69E91F172E7F075E00353A3E /* Assets.xcassets */,
 				69E91F192E7F075E00353A3E /* Preview Content */,
+				69E91F3D2E7F077800353A3E /* StemEngine.swift */,
+				69E91F442E7F0D9900353A3E /* LibraryStore.swift */,
+				69E91F462E7F146200353A3E /* StemFolder.swift */,
 			);
 			path = stemplayer;
 			sourceTree = "<group>";
@@ -143,6 +152,8 @@
 			dependencies = (
 			);
 			name = stemplayer;
+			packageProductDependencies = (
+			);
 			productName = stemplayer;
 			productReference = 69E91F102E7F075E00353A3E /* stemplayer.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,8 @@
 				Base,
 			);
 			mainGroup = 69E91F072E7F075E00353A3E;
+			packageReferences = (
+			);
 			productRefGroup = 69E91F112E7F075E00353A3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */,
+				69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */,
 				69E91F162E7F075E00353A3E /* ContentView.swift in Sources */,
 				69E91F142E7F075E00353A3E /* stemplayerApp.swift in Sources */,
+				69E91F472E7F146200353A3E /* StemFolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
