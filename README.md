@@ -2,8 +2,8 @@
 
 A modern **Stem Player** built with **Swift/SwiftUI** that allows you to load a folder of audio stems and interactively remix a track. The player automatically maps your stems (e.g., Vocals, Drums, Bass, Other) into an intuitive circular interface, letting you manipulate layers in real-time.
 
-![Screenshot 1](./stemplayer/IMG_8629.PNG)
-![Screenshot 2](./stemplayer/IMG_8630.PNG)
+![Screenshot 1](./images/IMG_8629.PNG)
+![Screenshot 2](./images/IMG_8630.PNG)
 
 ---
 
