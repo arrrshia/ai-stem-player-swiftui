@@ -9,6 +9,14 @@ A modern **Stem Player** built with **Swift/SwiftUI** that allows you to load a 
 
 ---
 
+## Planned Features
+
+* **AI Stem Splitting**: Import a single track and auto-generate stems with AI.
+* **YouTube & SoundCloud Importing**: Grab audio directly from online sources and split into stems.
+* Advanced stem mixing tools (effects, filters, etc).
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
@@ -46,7 +54,7 @@ This app is inspired by the idea of interactive music remixing. Instead of liste
    ```bash
    git clone https://github.com/yourusername/stem-player.git
    cd stem-player
-````
+    ```
 
 2. Open the project in **Xcode**:
 
@@ -64,14 +72,6 @@ This app is inspired by the idea of interactive music remixing. Instead of liste
 2. In the app, load your stem folder via **Local Stem Folders**.
 3. Once loaded, the stems will map into the **radial stem interface**.
 4. Press play and manipulate each stem by adjusting its intensity.
-
----
-
-## Planned Features
-
-* **AI Stem Splitting**: Import a single track and auto-generate stems with AI.
-* **YouTube & SoundCloud Importing**: Grab audio directly from online sources and split into stems.
-* Advanced stem mixing tools (effects, filters, etc).
 
 ---
 
