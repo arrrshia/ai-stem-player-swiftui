@@ -7,31 +7,65 @@
 
 import Foundation
 import UniformTypeIdentifiers
+import SwiftData
 
-struct StemFolder: Identifiable, Equatable {
-    struct StemFile: Identifiable, Equatable {
-        let id = UUID()
-        let displayName: String
-        let bookmark: Data
+@Model
+class StemFolder: Identifiable, Equatable, Codable {
+    var stemNames: [String] { stems.map { $0.displayName } }
+
+    init(id: UUID = UUID(), name: String, url: URL, stems: [StemFile] = []) {
+        self.id = id
+        self.name = name
+        self.url = url
+        self.stems = stems
+    }
+    
+    struct StemFile: Identifiable, Equatable, Codable {
+        var id = UUID()
+        var displayName: String
+        var bookmark: Data
 
         func makeResource() -> SecurityScopedResource? {
             SecurityScopedResource(bookmarkData: bookmark)
         }
     }
 
-    let id = UUID()
-    let name: String
-    let url: URL
-    let stems: [StemFile]
+    @Attribute(.unique) var id: UUID
+    var name: String
+    var url: URL
+    var stems: [StemFile]
 
-    var stemNames: [String] { stems.map { $0.displayName } }
+    // MARK: - Codable (manual so we control what's encoded/decoded)
 
+    private enum CodingKeys: String, CodingKey {
+        case id, name, url, stems
+    }
+
+    required convenience init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        let name = try container.decode(String.self, forKey: .name)
+        let url = try container.decode(URL.self, forKey: .url)
+        let stems = try container.decodeIfPresent([StemFile].self, forKey: .stems) ?? []
+        self.init(id: id, name: name, url: url, stems: stems)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(url, forKey: .url)
+        try container.encode(stems, forKey: .stems)
+    }
+
+    // Convenience to recreate SecurityScopedResources
     func makeStemResources() -> [SecurityScopedResource] {
         stems.compactMap { $0.makeResource() }
     }
 }
 
-final class SecurityScopedResource {
+
+final class SecurityScopedResource: Codable {
     let url: URL
     private let needsStop: Bool
     private var hasStopped = false
@@ -61,88 +95,5 @@ final class SecurityScopedResource {
 
     deinit {
         stopAccessing()
-    }
-}
-
-@MainActor
-final class StemLibrary: ObservableObject {
-    @Published private(set) var folders: [StemFolder] = []
-
-    // Accepts a folder URL from the document picker, scans 4 audio files, and stores it
-    func addFolder(_ folderURL: URL) {
-        // use security scope while scanning
-        let needsStop = folderURL.startAccessingSecurityScopedResource()
-        defer { if needsStop { folderURL.stopAccessingSecurityScopedResource() } }
-
-        let fm = FileManager.default
-        let keys: [URLResourceKey] = [.isRegularFileKey, .nameKey, .isDirectoryKey]
-        guard let enumerator = fm.enumerator(at: folderURL, includingPropertiesForKeys: keys, options: [.skipsHiddenFiles, .skipsPackageDescendants]) else { return }
-
-        var audioURLs: [URL] = []
-        let exts: Set<String> = ["m4a","mp3","wav","aif","aiff","flac","caf"]
-        for case let fileURL as URL in enumerator {
-            if exts.contains(fileURL.pathExtension.lowercased()) {
-                audioURLs.append(fileURL)
-            }
-        }
-
-        // Keep only 4, sorted to a predictable order
-        let sorted = sortStems(audioURLs)
-        guard sorted.count == 4 else { return } // enforce 4 stems for this flow
-
-        let stemFiles: [StemFolder.StemFile] = sorted.compactMap { url in
-            guard let bookmark = try? url.bookmarkData(
-                options: [.minimalBookmark],
-                includingResourceValuesForKeys: nil,
-                relativeTo: nil
-            ) else { return nil }
-            let name = url.deletingPathExtension().lastPathComponent
-            return StemFolder.StemFile(displayName: name, bookmark: bookmark)
-        }
-
-        guard stemFiles.count == 4 else { return }
-
-        let folderName = folderURL.lastPathComponent
-        let item = StemFolder(name: folderName, url: folderURL, stems: stemFiles)
-
-        // Replace existing entry for same folder if present
-        if let idx = folders.firstIndex(where: { $0.url == folderURL }) {
-            folders[idx] = item
-        } else {
-            folders.insert(item, at: 0)
-        }
-    }
-
-    private func sortStems(_ urls: [URL]) -> [URL] {
-        // Score by stem name if present; else by numeric prefix; else alphabetical
-        func score(_ url: URL) -> (Int, Int, String) {
-            let name = url.deletingPathExtension().lastPathComponent.lowercased()
-
-            // Common stem keywords
-            let keywords: [(String, Int)] = [
-                ("vocals", 0), ("vocal", 0), ("vox", 0),
-                ("drums", 1), ("drum", 1), ("perc", 1),
-                ("bass", 2),
-                ("other", 3), ("instr", 3), ("accompaniment", 3)
-            ]
-            if let k = keywords.first(where: { name.contains($0.0) }) {
-                return (k.1, 0, name)
-            }
-
-            // Leading number e.g. "1_", "02-", etc.
-            if let match = name.split(whereSeparator: { !$0.isNumber }).first,
-               let n = Int(match) {
-                return (n, 1, name)
-            }
-
-            return (Int.max, 2, name)
-        }
-
-        return urls.sorted { a, b in
-            let sa = score(a), sb = score(b)
-            if sa.0 != sb.0 { return sa.0 < sb.0 }
-            if sa.1 != sb.1 { return sa.1 < sb.1 }
-            return sa.2 < sb.2
-        }
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6975D0552E887274002FCE12 /* StemLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0542E887274002FCE12 /* StemLibrary.swift */; };
+		6975D0572E888151002FCE12 /* PressableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0562E888151002FCE12 /* PressableStyle.swift */; };
+		6975D0592E8881A9002FCE12 /* StemPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0582E8881A9002FCE12 /* StemPlayer.swift */; };
 		69E91F142E7F075E00353A3E /* stemplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F132E7F075E00353A3E /* stemplayerApp.swift */; };
 		69E91F162E7F075E00353A3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F152E7F075E00353A3E /* ContentView.swift */; };
 		69E91F182E7F075E00353A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F172E7F075E00353A3E /* Assets.xcassets */; };
@@ -17,10 +20,6 @@
 		69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F3D2E7F077800353A3E /* StemEngine.swift */; };
 		69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F442E7F0D9900353A3E /* LibraryStore.swift */; };
 		69E91F472E7F146200353A3E /* StemFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F462E7F146200353A3E /* StemFolder.swift */; };
-		69E91F4B2E7F2A6100353A3E /* IMG_8629.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F492E7F2A6100353A3E /* IMG_8629.PNG */; };
-		69E91F4C2E7F2A6100353A3E /* IMG_8630.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F4A2E7F2A6100353A3E /* IMG_8630.PNG */; };
-		69E91F502E7F2A7900353A3E /* IMG_8629.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F4E2E7F2A7900353A3E /* IMG_8629.PNG */; };
-		69E91F512E7F2A7900353A3E /* IMG_8630.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F4F2E7F2A7900353A3E /* IMG_8630.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6975D0542E887274002FCE12 /* StemLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemLibrary.swift; sourceTree = "<group>"; };
+		6975D0562E888151002FCE12 /* PressableStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableStyle.swift; sourceTree = "<group>"; };
+		6975D0582E8881A9002FCE12 /* StemPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemPlayer.swift; sourceTree = "<group>"; };
 		69E91F102E7F075E00353A3E /* stemplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stemplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E91F132E7F075E00353A3E /* stemplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerApp.swift; sourceTree = "<group>"; };
 		69E91F152E7F075E00353A3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,11 +115,14 @@
 				69E91F4D2E7F2A7000353A3E /* images */,
 				69E91F132E7F075E00353A3E /* stemplayerApp.swift */,
 				69E91F152E7F075E00353A3E /* ContentView.swift */,
+				6975D0562E888151002FCE12 /* PressableStyle.swift */,
 				69E91F172E7F075E00353A3E /* Assets.xcassets */,
 				69E91F192E7F075E00353A3E /* Preview Content */,
 				69E91F3D2E7F077800353A3E /* StemEngine.swift */,
 				69E91F442E7F0D9900353A3E /* LibraryStore.swift */,
+				6975D0582E8881A9002FCE12 /* StemPlayer.swift */,
 				69E91F462E7F146200353A3E /* StemFolder.swift */,
+				6975D0542E887274002FCE12 /* StemLibrary.swift */,
 			);
 			path = stemplayer;
 			sourceTree = "<group>";
@@ -266,12 +271,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E91F4C2E7F2A6100353A3E /* IMG_8630.PNG in Resources */,
-				69E91F502E7F2A7900353A3E /* IMG_8629.PNG in Resources */,
-				69E91F512E7F2A7900353A3E /* IMG_8630.PNG in Resources */,
 				69E91F1B2E7F075E00353A3E /* Preview Assets.xcassets in Resources */,
 				69E91F182E7F075E00353A3E /* Assets.xcassets in Resources */,
-				69E91F4B2E7F2A6100353A3E /* IMG_8629.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +298,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */,
+				6975D0592E8881A9002FCE12 /* StemPlayer.swift in Sources */,
+				6975D0572E888151002FCE12 /* PressableStyle.swift in Sources */,
 				69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */,
+				6975D0552E887274002FCE12 /* StemLibrary.swift in Sources */,
 				69E91F162E7F075E00353A3E /* ContentView.swift in Sources */,
 				69E91F142E7F075E00353A3E /* stemplayerApp.swift in Sources */,
 				69E91F472E7F146200353A3E /* StemFolder.swift in Sources */,

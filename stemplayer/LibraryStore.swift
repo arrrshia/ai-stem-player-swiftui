@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct DownloadedTrack: Identifiable, Equatable {
-    let id = UUID()
-    let title: String
-    let url: URL
+struct DownloadedTrack: Identifiable, Equatable, Codable {
+    var id = UUID()
+    var title: String
+    var url: URL
 }
