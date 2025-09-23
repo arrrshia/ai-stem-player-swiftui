@@ -17,10 +17,6 @@
 		69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F3D2E7F077800353A3E /* StemEngine.swift */; };
 		69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F442E7F0D9900353A3E /* LibraryStore.swift */; };
 		69E91F472E7F146200353A3E /* StemFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F462E7F146200353A3E /* StemFolder.swift */; };
-		69E91F4B2E7F2A6100353A3E /* IMG_8629.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F492E7F2A6100353A3E /* IMG_8629.PNG */; };
-		69E91F4C2E7F2A6100353A3E /* IMG_8630.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F4A2E7F2A6100353A3E /* IMG_8630.PNG */; };
-		69E91F502E7F2A7900353A3E /* IMG_8629.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F4E2E7F2A7900353A3E /* IMG_8629.PNG */; };
-		69E91F512E7F2A7900353A3E /* IMG_8630.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F4F2E7F2A7900353A3E /* IMG_8630.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,12 +262,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E91F4C2E7F2A6100353A3E /* IMG_8630.PNG in Resources */,
-				69E91F502E7F2A7900353A3E /* IMG_8629.PNG in Resources */,
-				69E91F512E7F2A7900353A3E /* IMG_8630.PNG in Resources */,
 				69E91F1B2E7F075E00353A3E /* Preview Assets.xcassets in Resources */,
 				69E91F182E7F075E00353A3E /* Assets.xcassets in Resources */,
-				69E91F4B2E7F2A6100353A3E /* IMG_8629.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
