@@ -20,7 +20,3 @@ struct PressableStyle: ButtonStyle {
             .animation(.spring(response: 0.22, dampingFraction: 0.85), value: configuration.isPressed)
     }
 }
-
-#Preview {
-    PressableStyle() as! any View
-}
