@@ -1,122 +1,15 @@
 //
-//  ContentView.swift
+//  GlassFolderList.swift
 //  stemplayer
 //
-//  Created by Andrew Arshia Almasi on 9/20/25.
+//  Created by Andrew Arshia Almasi on 9/28/25.
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
-
-struct ContentView: View {
-    @StateObject private var engine = StemEngine()
-    @StateObject private var library = StemLibrary()
-    
-    @State private var showingImporter = false
-    @State private var importedURLs: [URL] = []
-    
-    // Track which folder is currently loaded
-    @State private var selectedFolderID: StemFolder.ID? = nil
-    @State private var selectedFileID: URL?
-    var body: some View {
-        ZStack {
-            Color(hex: 0xDAD6CD).ignoresSafeArea()
-            
-            // Main layout: center player vertically, list below (smaller)
-            VStack(spacing: 16) {
-                Spacer(minLength: 0)
-                
-                StemPlayer(
-                    levels: $engine.levels,
-                    isPlaying: engine.isPlaying,
-                    playPause: { engine.isPlaying ? engine.pause() : engine.play() }
-                )
-                .frame(maxWidth: 520)
-                .padding(.horizontal)
-                .opacity(engine.isLoaded ? 1 : 0.95)
-                if !library.statusCurrent.isEmpty,
-                   library.statusCurrent.lowercased() != "asleep" {
-                    LoadingLabel(text: library.statusCurrent)
-                        .transition(.opacity.combined(with: .scale))
-                        .padding(.top, 4)
-                }
-
-                Spacer(minLength: 40)
-                
-                GlassFolderList(
-                    library: library,
-                    selectedFolderID: selectedFolderID,
-                    onTapFolder: { folder in
-                        engine.load(folder: folder)
-                        selectedFolderID = folder.id
-                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                    },
-                    onPressLoad: { folder in
-                        engine.load(folder: folder)
-                        selectedFolderID = folder.id
-                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                    },
-                    onSwipeFolder: { folder in
-                        print("Deleting")
-                        if selectedFolderID == folder.id {
-                            selectedFolderID = nil
-                        }
-                        library.deleteStem(folder)
-                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                    }
-                )
-                .frame(maxWidth: 520)
-                .padding(.horizontal)
-                .padding(.bottom, 8)
-            }
-            .padding(.top, 8)
-            
-            // Top-right glass "+" button for folder import
-            VStack {
-                HStack {
-                    Spacer()
-                    Button {
-                        showingImporter = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundStyle(Color.black.opacity(0.7))
-                            .frame(width: 44, height: 44)
-                            .background(.ultraThinMaterial, in: Circle())
-                            .overlay(
-                                Circle()
-                                    .strokeBorder(Color.white.opacity(0.25), lineWidth: 1)
-                            )
-                            .shadow(color: .black.opacity(0.18), radius: 8, x: 0, y: 6)
-                    }
-                    .buttonStyle(.plain)
-                    .padding(.trailing, 16)
-                    .padding(.top, 12)
-                }
-                Spacer()
-            }
-        }
-        .fileImporter(
-            isPresented: $showingImporter,
-            allowedContentTypes: [.audio],
-            allowsMultipleSelection: false
-        ) { result in
-            switch result {
-            case .success(let urls):
-                if let ogURL = urls.first {
-                    library.splitTrack(ogURL)
-                }
-            case .failure(let error):
-                print("Error", error.localizedDescription)
-            }
-        }
-    }
-}
-
 
 // MARK: - Glass List
 
-private struct GlassFolderList: View {
+struct GlassFolderList: View {
     let library: StemLibrary
     let selectedFolderID: StemFolder.ID?
     var onTapFolder: (StemFolder) -> Void
@@ -238,52 +131,5 @@ private struct GlassFolderList: View {
                 .shadow(color: .black.opacity(0.12), radius: 16, x: 0, y: 8)
         )
         .animation(.spring(response: 0.28, dampingFraction: 0.88, blendDuration: 0.15), value: selectedFolderID)
-    }
-}
-
-
-#Preview {
-    ContentView()
-}
-
-extension Color {
-    init(red: Int, green: Int, blue: Int) {
-       assert(red >= 0 && red <= 255, "Invalid red component")
-       assert(green >= 0 && green <= 255, "Invalid green component")
-       assert(blue >= 0 && blue <= 255, "Invalid blue component")
-
-       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0)
-   }
-
-    init(hex: UInt32, alpha: Double = 1.0) {
-            let r = Double((hex >> 16) & 0xFF) / 255.0
-            let g = Double((hex >> 8) & 0xFF) / 255.0
-            let b = Double(hex & 0xFF) / 255.0
-            self = Color(.sRGB, red: r, green: g, blue: b, opacity: alpha)
-   }
-}
-struct InnerShadow: ViewModifier {
-    var color: Color
-    var radius: CGFloat
-    var offset: CGSize
-
-    func body(content: Content) -> some View {
-        content
-            .overlay(
-                content
-                    .mask(
-                        content
-                            .offset(offset)
-                            .blur(radius: radius)
-                    )
-                    .foregroundColor(color)
-                    .blendMode(.multiply)
-            )
-    }
-}
-
-extension View {
-    func innerShadow(color: Color, radius: CGFloat, offset: CGSize) -> some View {
-        modifier(InnerShadow(color: color, radius: radius, offset: offset))
     }
 }

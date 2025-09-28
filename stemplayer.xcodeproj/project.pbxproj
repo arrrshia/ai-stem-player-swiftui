@@ -10,18 +10,20 @@
 		6975D0552E887274002FCE12 /* StemLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0542E887274002FCE12 /* StemLibrary.swift */; };
 		6975D0572E888151002FCE12 /* PressableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0562E888151002FCE12 /* PressableStyle.swift */; };
 		6975D0592E8881A9002FCE12 /* StemPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0582E8881A9002FCE12 /* StemPlayer.swift */; };
-		6975D05B2E88854F002FCE12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6975D05A2E88854F002FCE12 /* .gitignore */; };
 		6975D05F2E88B5E2002FCE12 /* api_client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D05E2E88B5E2002FCE12 /* api_client.swift */; };
 		6975D0612E8997EE002FCE12 /* LoadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0602E8997EE002FCE12 /* LoadingLabel.swift */; };
+		6975D0672E89B919002FCE12 /* SecurityScopedResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0662E89B919002FCE12 /* SecurityScopedResource.swift */; };
+		6975D06B2E89B958002FCE12 /* GlassFolderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D06A2E89B958002FCE12 /* GlassFolderList.swift */; };
+		6975D06E2E89B983002FCE12 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D06D2E89B983002FCE12 /* Color+Hex.swift */; };
+		6975D0702E89B99D002FCE12 /* View+InnerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D06F2E89B99D002FCE12 /* View+InnerShadow.swift */; };
+		6975D0732E89B9DA002FCE12 /* SolidGlowLED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0722E89B9DA002FCE12 /* SolidGlowLED.swift */; };
+		6975D0782E89F5E1002FCE12 /* SCDL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0772E89F5E1002FCE12 /* SCDL.swift */; };
+		6975D07A2E89F802002FCE12 /* SoundCloudSheetLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0792E89F802002FCE12 /* SoundCloudSheetLite.swift */; };
 		69E91F142E7F075E00353A3E /* stemplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F132E7F075E00353A3E /* stemplayerApp.swift */; };
 		69E91F162E7F075E00353A3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F152E7F075E00353A3E /* ContentView.swift */; };
 		69E91F182E7F075E00353A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F172E7F075E00353A3E /* Assets.xcassets */; };
 		69E91F1B2E7F075E00353A3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F1A2E7F075E00353A3E /* Preview Assets.xcassets */; };
-		69E91F252E7F075F00353A3E /* stemplayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F242E7F075F00353A3E /* stemplayerTests.swift */; };
-		69E91F2F2E7F075F00353A3E /* stemplayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F2E2E7F075F00353A3E /* stemplayerUITests.swift */; };
-		69E91F312E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F302E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift */; };
 		69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F3D2E7F077800353A3E /* StemEngine.swift */; };
-		69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F442E7F0D9900353A3E /* LibraryStore.swift */; };
 		69E91F472E7F146200353A3E /* StemFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F462E7F146200353A3E /* StemFolder.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,25 +48,26 @@
 		6975D0542E887274002FCE12 /* StemLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemLibrary.swift; sourceTree = "<group>"; };
 		6975D0562E888151002FCE12 /* PressableStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableStyle.swift; sourceTree = "<group>"; };
 		6975D0582E8881A9002FCE12 /* StemPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemPlayer.swift; sourceTree = "<group>"; };
-		6975D05A2E88854F002FCE12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6975D05E2E88B5E2002FCE12 /* api_client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api_client.swift; sourceTree = "<group>"; };
 		6975D0602E8997EE002FCE12 /* LoadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLabel.swift; sourceTree = "<group>"; };
+		6975D0662E89B919002FCE12 /* SecurityScopedResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityScopedResource.swift; sourceTree = "<group>"; };
+		6975D06A2E89B958002FCE12 /* GlassFolderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassFolderList.swift; sourceTree = "<group>"; };
+		6975D06D2E89B983002FCE12 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		6975D06F2E89B99D002FCE12 /* View+InnerShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+InnerShadow.swift"; sourceTree = "<group>"; };
+		6975D0722E89B9DA002FCE12 /* SolidGlowLED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidGlowLED.swift; sourceTree = "<group>"; };
+		6975D0772E89F5E1002FCE12 /* SCDL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDL.swift; sourceTree = "<group>"; };
+		6975D0792E89F802002FCE12 /* SoundCloudSheetLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCloudSheetLite.swift; sourceTree = "<group>"; };
+		69C351D42E89FFDD0090465B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69E91F102E7F075E00353A3E /* stemplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stemplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E91F132E7F075E00353A3E /* stemplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerApp.swift; sourceTree = "<group>"; };
 		69E91F152E7F075E00353A3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		69E91F172E7F075E00353A3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69E91F1A2E7F075E00353A3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		69E91F202E7F075F00353A3E /* stemplayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stemplayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E91F242E7F075F00353A3E /* stemplayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerTests.swift; sourceTree = "<group>"; };
 		69E91F2A2E7F075F00353A3E /* stemplayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stemplayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E91F2E2E7F075F00353A3E /* stemplayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerUITests.swift; sourceTree = "<group>"; };
-		69E91F302E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		69E91F3D2E7F077800353A3E /* StemEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemEngine.swift; sourceTree = "<group>"; };
-		69E91F442E7F0D9900353A3E /* LibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStore.swift; sourceTree = "<group>"; };
 		69E91F462E7F146200353A3E /* StemFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemFolder.swift; sourceTree = "<group>"; };
 		69E91F482E7F28FC00353A3E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		69E91F492E7F2A6100353A3E /* IMG_8629.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_8629.PNG; path = ../../../Downloads/IMG_8629.PNG; sourceTree = "<group>"; };
-		69E91F4A2E7F2A6100353A3E /* IMG_8630.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_8630.PNG; path = ../../../Downloads/IMG_8630.PNG; sourceTree = "<group>"; };
 		69E91F4E2E7F2A7900353A3E /* IMG_8629.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_8629.PNG; path = ../../../../Downloads/IMG_8629.PNG; sourceTree = "<group>"; };
 		69E91F4F2E7F2A7900353A3E /* IMG_8630.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_8630.PNG; path = ../../../../Downloads/IMG_8630.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,14 +97,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6975D0642E89B8C6002FCE12 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				6975D0762E89BAC2002FCE12 /* utils */,
+				69E91F462E7F146200353A3E /* StemFolder.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		6975D0652E89B8F8002FCE12 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				69E91F132E7F075E00353A3E /* stemplayerApp.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		6975D0682E89B92E002FCE12 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				6975D0752E89BA7D002FCE12 /* api */,
+				6975D0542E887274002FCE12 /* StemLibrary.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		6975D0692E89B946002FCE12 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				6975D0712E89B9C3002FCE12 /* shared */,
+				69E91F152E7F075E00353A3E /* ContentView.swift */,
+				6975D0582E8881A9002FCE12 /* StemPlayer.swift */,
+				6975D06A2E89B958002FCE12 /* GlassFolderList.swift */,
+				6975D0792E89F802002FCE12 /* SoundCloudSheetLite.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		6975D06C2E89B97B002FCE12 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6975D06D2E89B983002FCE12 /* Color+Hex.swift */,
+				6975D06F2E89B99D002FCE12 /* View+InnerShadow.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		6975D0712E89B9C3002FCE12 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				6975D0562E888151002FCE12 /* PressableStyle.swift */,
+				6975D0602E8997EE002FCE12 /* LoadingLabel.swift */,
+				6975D0722E89B9DA002FCE12 /* SolidGlowLED.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		6975D0742E89BA55002FCE12 /* engines */ = {
+			isa = PBXGroup;
+			children = (
+				69E91F3D2E7F077800353A3E /* StemEngine.swift */,
+			);
+			path = engines;
+			sourceTree = "<group>";
+		};
+		6975D0752E89BA7D002FCE12 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				6975D05E2E88B5E2002FCE12 /* api_client.swift */,
+				6975D0772E89F5E1002FCE12 /* SCDL.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		6975D0762E89BAC2002FCE12 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6975D0662E89B919002FCE12 /* SecurityScopedResource.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		69E91F072E7F075E00353A3E = {
 			isa = PBXGroup;
 			children = (
-				6975D05A2E88854F002FCE12 /* .gitignore */,
 				69E91F482E7F28FC00353A3E /* README.md */,
 				69E91F122E7F075E00353A3E /* stemplayer */,
-				69E91F232E7F075F00353A3E /* stemplayerTests */,
-				69E91F2D2E7F075F00353A3E /* stemplayerUITests */,
 				69E91F112E7F075E00353A3E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,19 +201,16 @@
 		69E91F122E7F075E00353A3E /* stemplayer */ = {
 			isa = PBXGroup;
 			children = (
+				69C351D42E89FFDD0090465B /* Info.plist */,
+				6975D0742E89BA55002FCE12 /* engines */,
+				6975D06C2E89B97B002FCE12 /* extensions */,
+				6975D0692E89B946002FCE12 /* views */,
+				6975D0682E89B92E002FCE12 /* data */,
+				6975D0652E89B8F8002FCE12 /* app */,
+				6975D0642E89B8C6002FCE12 /* models */,
 				69E91F4D2E7F2A7000353A3E /* images */,
-				69E91F132E7F075E00353A3E /* stemplayerApp.swift */,
-				69E91F152E7F075E00353A3E /* ContentView.swift */,
-				6975D0602E8997EE002FCE12 /* LoadingLabel.swift */,
-				6975D0562E888151002FCE12 /* PressableStyle.swift */,
 				69E91F172E7F075E00353A3E /* Assets.xcassets */,
 				69E91F192E7F075E00353A3E /* Preview Content */,
-				69E91F3D2E7F077800353A3E /* StemEngine.swift */,
-				69E91F442E7F0D9900353A3E /* LibraryStore.swift */,
-				6975D0582E8881A9002FCE12 /* StemPlayer.swift */,
-				69E91F462E7F146200353A3E /* StemFolder.swift */,
-				6975D05E2E88B5E2002FCE12 /* api_client.swift */,
-				6975D0542E887274002FCE12 /* StemLibrary.swift */,
 			);
 			path = stemplayer;
 			sourceTree = "<group>";
@@ -142,25 +221,6 @@
 				69E91F1A2E7F075E00353A3E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		69E91F232E7F075F00353A3E /* stemplayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				69E91F242E7F075F00353A3E /* stemplayerTests.swift */,
-			);
-			path = stemplayerTests;
-			sourceTree = "<group>";
-		};
-		69E91F2D2E7F075F00353A3E /* stemplayerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				69E91F492E7F2A6100353A3E /* IMG_8629.PNG */,
-				69E91F4A2E7F2A6100353A3E /* IMG_8630.PNG */,
-				69E91F2E2E7F075F00353A3E /* stemplayerUITests.swift */,
-				69E91F302E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift */,
-			);
-			path = stemplayerUITests;
 			sourceTree = "<group>";
 		};
 		69E91F4D2E7F2A7000353A3E /* images */ = {
@@ -281,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69E91F1B2E7F075E00353A3E /* Preview Assets.xcassets in Resources */,
-				6975D05B2E88854F002FCE12 /* .gitignore in Resources */,
 				69E91F182E7F075E00353A3E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,15 +366,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6975D0702E89B99D002FCE12 /* View+InnerShadow.swift in Sources */,
 				69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */,
 				6975D0592E8881A9002FCE12 /* StemPlayer.swift in Sources */,
 				6975D05F2E88B5E2002FCE12 /* api_client.swift in Sources */,
 				6975D0612E8997EE002FCE12 /* LoadingLabel.swift in Sources */,
 				6975D0572E888151002FCE12 /* PressableStyle.swift in Sources */,
-				69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */,
+				6975D06E2E89B983002FCE12 /* Color+Hex.swift in Sources */,
+				6975D0672E89B919002FCE12 /* SecurityScopedResource.swift in Sources */,
+				6975D0732E89B9DA002FCE12 /* SolidGlowLED.swift in Sources */,
 				6975D0552E887274002FCE12 /* StemLibrary.swift in Sources */,
 				69E91F162E7F075E00353A3E /* ContentView.swift in Sources */,
+				6975D07A2E89F802002FCE12 /* SoundCloudSheetLite.swift in Sources */,
+				6975D0782E89F5E1002FCE12 /* SCDL.swift in Sources */,
 				69E91F142E7F075E00353A3E /* stemplayerApp.swift in Sources */,
+				6975D06B2E89B958002FCE12 /* GlassFolderList.swift in Sources */,
 				69E91F472E7F146200353A3E /* StemFolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +389,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E91F252E7F075F00353A3E /* stemplayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,8 +396,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E91F312E7F075F00353A3E /* stemplayerUITestsLaunchTests.swift in Sources */,
-				69E91F2F2E7F075F00353A3E /* stemplayerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +545,8 @@
 				DEVELOPMENT_TEAM = QHG5N2FB4H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = stemplayer/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -512,6 +576,8 @@
 				DEVELOPMENT_TEAM = QHG5N2FB4H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = stemplayer/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

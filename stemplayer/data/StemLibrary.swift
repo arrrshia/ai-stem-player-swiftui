@@ -118,7 +118,7 @@ final class StemLibrary: ObservableObject {
     // MARK: API USAGE
     func splitTrack(_ fileURL: URL) {
         statusCurrent = "Let's split our song"
-        let client = AudioSeparatorAPIClient(apiURL: "https://arrrshia--audio-separator-api.modal.run")
+        let client = AudioSeparatorAPIClient(apiURL: "YOURAPIHERE")
         
         Task {
             let hasAccess = fileURL.startAccessingSecurityScopedResource()
