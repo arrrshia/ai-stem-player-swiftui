@@ -10,7 +10,7 @@ import SwiftData
 
 @MainActor
 final class StemLibrary: ObservableObject {
-    var folders: [StemFolder] = []
+    @Published private(set)var folders: [StemFolder] = []
     let container = try! ModelContainer(for: StemFolder.self)
     let statusList = ["loading stems", "saving stems", "asleep"]
     @Published var statusCurrent: String = "asleep"
@@ -22,8 +22,7 @@ final class StemLibrary: ObservableObject {
     func loadFolders() -> [StemFolder] {
         let context = container.mainContext
         let stemFolders = FetchDescriptor<StemFolder>()
-        let folders = try! context.fetch(stemFolders)
-        return folders
+        return (try? context.fetch(stemFolders)) ?? []
     }
     
     // Accepts a folder URL from the document picker, scans 4 audio files, and stores it
@@ -79,6 +78,7 @@ final class StemLibrary: ObservableObject {
         print("added", item)
         if context.hasChanges == true
         { try? context.save() } else { print("no changes") }
+        folders = loadFolders()
         statusCurrent = statusList[2]
     }
     
@@ -154,6 +154,10 @@ final class StemLibrary: ObservableObject {
                             switch files {
                             case .map(let hashToName):
                                 for (hash, filename) in hashToName {
+                                    if filename.contains("Drums") {statusCurrent="Downloading drums"}
+                                    if filename.contains("Vocals") {statusCurrent="Downloading vocals"}
+                                    if filename.contains("Other") {statusCurrent="Downloading everything else"}
+
                                     let outURL = tempFolder.appendingPathComponent(filename)
                                     _ = try await client.downloadFileByHash(
                                         taskID: taskID,
@@ -190,5 +194,11 @@ final class StemLibrary: ObservableObject {
                 }
             }
         }
+    }
+    func deleteStem(_ folder: StemFolder) {
+        let context = container.mainContext
+        context.delete(folder)
+        try? context.save()
+        folders = loadFolders()
     }
 }

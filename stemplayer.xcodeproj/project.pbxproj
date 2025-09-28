@@ -12,6 +12,7 @@
 		6975D0592E8881A9002FCE12 /* StemPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0582E8881A9002FCE12 /* StemPlayer.swift */; };
 		6975D05B2E88854F002FCE12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6975D05A2E88854F002FCE12 /* .gitignore */; };
 		6975D05F2E88B5E2002FCE12 /* api_client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D05E2E88B5E2002FCE12 /* api_client.swift */; };
+		6975D0612E8997EE002FCE12 /* LoadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975D0602E8997EE002FCE12 /* LoadingLabel.swift */; };
 		69E91F142E7F075E00353A3E /* stemplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F132E7F075E00353A3E /* stemplayerApp.swift */; };
 		69E91F162E7F075E00353A3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E91F152E7F075E00353A3E /* ContentView.swift */; };
 		69E91F182E7F075E00353A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E91F172E7F075E00353A3E /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		6975D0582E8881A9002FCE12 /* StemPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StemPlayer.swift; sourceTree = "<group>"; };
 		6975D05A2E88854F002FCE12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6975D05E2E88B5E2002FCE12 /* api_client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api_client.swift; sourceTree = "<group>"; };
+		6975D0602E8997EE002FCE12 /* LoadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingLabel.swift; sourceTree = "<group>"; };
 		69E91F102E7F075E00353A3E /* stemplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stemplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E91F132E7F075E00353A3E /* stemplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stemplayerApp.swift; sourceTree = "<group>"; };
 		69E91F152E7F075E00353A3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				69E91F4D2E7F2A7000353A3E /* images */,
 				69E91F132E7F075E00353A3E /* stemplayerApp.swift */,
 				69E91F152E7F075E00353A3E /* ContentView.swift */,
+				6975D0602E8997EE002FCE12 /* LoadingLabel.swift */,
 				6975D0562E888151002FCE12 /* PressableStyle.swift */,
 				69E91F172E7F075E00353A3E /* Assets.xcassets */,
 				69E91F192E7F075E00353A3E /* Preview Content */,
@@ -307,6 +310,7 @@
 				69E91F3E2E7F077800353A3E /* StemEngine.swift in Sources */,
 				6975D0592E8881A9002FCE12 /* StemPlayer.swift in Sources */,
 				6975D05F2E88B5E2002FCE12 /* api_client.swift in Sources */,
+				6975D0612E8997EE002FCE12 /* LoadingLabel.swift in Sources */,
 				6975D0572E888151002FCE12 /* PressableStyle.swift in Sources */,
 				69E91F452E7F0D9900353A3E /* LibraryStore.swift in Sources */,
 				6975D0552E887274002FCE12 /* StemLibrary.swift in Sources */,
