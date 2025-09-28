@@ -11,22 +11,22 @@ import UniformTypeIdentifiers
 struct ContentView: View {
     @StateObject private var engine = StemEngine()
     @StateObject private var library = StemLibrary()
-
+    
     @State private var showingFolderImporter = false
     @State private var showingImporter = false
     @State private var importedURLs: [URL] = []
-
+    
     // Track which folder is currently loaded
     @State private var selectedFolderID: StemFolder.ID? = nil
-
+    @State private var selectedFileID: URL?
     var body: some View {
         ZStack {
             Color(hex: 0xDAD6CD).ignoresSafeArea()
-
+            
             // Main layout: center player vertically, list below (smaller)
             VStack(spacing: 16) {
                 Spacer(minLength: 0)
-
+                
                 StemPlayer(
                     levels: $engine.levels,
                     isPlaying: engine.isPlaying,
@@ -35,9 +35,15 @@ struct ContentView: View {
                 .frame(maxWidth: 520)
                 .padding(.horizontal)
                 .opacity(engine.isLoaded ? 1 : 0.95)
+                if !library.statusCurrent.isEmpty,
+                   library.statusCurrent.lowercased() != "asleep" {
+                    LoadingLabel(text: library.statusCurrent)
+                        .transition(.opacity.combined(with: .scale))
+                        .padding(.top, 4)
+                }
 
                 Spacer(minLength: 40)
-
+                
                 GlassFolderList(
                     library: library,
                     selectedFolderID: selectedFolderID,
@@ -57,7 +63,7 @@ struct ContentView: View {
                 .padding(.bottom, 8)
             }
             .padding(.top, 8)
-
+            
             // Top-right glass "+" button for folder import
             VStack {
                 HStack {
@@ -83,16 +89,70 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        // Folder importer (triggered by the + button)
         .fileImporter(
             isPresented: $showingFolderImporter,
-            allowedContentTypes: [.folder],
+            allowedContentTypes: [.audio],
             allowsMultipleSelection: false
         ) { result in
-            if case .success(let urls) = result, let folderURL = urls.first {
-                library.addFolder(folderURL)
+            switch result {
+            case .success(let urls):
+                if let ogURL = urls.first {
+                    library.splitTrack(ogURL)
+                }
+            case .failure(let error):
+                print("Error", error.localizedDescription)
             }
         }
+    }
+}
+private struct Shimmer: ViewModifier {
+    @State private var phase: CGFloat = -1.0
+    func body(content: Content) -> some View {
+        content
+            .overlay(
+                LinearGradient(
+                    colors: [.white.opacity(0.0), .white.opacity(0.45), .white.opacity(0.0)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .rotationEffect(.degrees(15))
+                .offset(x: phase * 160, y: 0)
+                .blendMode(.screen)
+                .mask(content)
+            )
+            .onAppear {
+                withAnimation(.linear(duration: 1.2).repeatForever(autoreverses: false)) {
+                    phase = 1.0
+                }
+            }
+    }
+}
+private struct LoadingLabel: View {
+    let text: String
+    @State private var tick = 0
+    private var dots: String { String(repeating: ".", count: (tick % 3) + 1) }
+    
+    var body: some View {
+        Text("\(text)\(dots)")
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(
+                LinearGradient(
+                    colors: [Color.black.opacity(0.85), Color.black.opacity(0.6)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
+            .background(.ultraThinMaterial, in: Capsule())
+            .overlay(
+                Capsule().stroke(Color.white.opacity(0.28), lineWidth: 1)
+            )
+            .shadow(color: .black.opacity(0.10), radius: 10, x: 0, y: 6)
+            .modifier(Shimmer())
+            .onReceive(Timer.publish(every: 0.45, on: .main, in: .common).autoconnect()) { _ in
+                tick += 1
+            }
     }
 }
 
